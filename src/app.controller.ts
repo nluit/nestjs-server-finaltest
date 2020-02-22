@@ -6,8 +6,9 @@ import { AuthService } from './auth/auth.service';
 export class AppController {
   constructor(private readonly authService: AuthService) {}
 
-  @Get()
+  @Get("/oke")
   sayHello(){
+    console.log("oke");
     return "hello word";
   }
   @UseGuards(LocalAuthGuard)
