@@ -1,0 +1,10 @@
+{
+    "type": "mysql",
+    "host": "localhost",
+    "port": 3306,
+    "username": "USERNAME",
+    "password": "PASSWORD",
+    "database": "sales_db",
+    "entities": ["./src/**/*.entity.ts", "./dist/**/*.entity.js"],
+    "synchronize": true
+}
