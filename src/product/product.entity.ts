@@ -14,7 +14,7 @@ export class Product  extends BaseEntity {
     img: string;
   @Column('text')
     desc: string;  
-    @Column('number')
+    @Column()
     discount: number; 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
     public createdAt: number;
