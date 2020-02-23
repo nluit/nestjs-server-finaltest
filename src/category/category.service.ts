@@ -4,11 +4,11 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { UpdateResult, DeleteResult } from  'typeorm';
 
+
 @Injectable()
 export class CategoryService {
   constructor(
-    @InjectRepository(Category)
-    
+    @InjectRepository(Category)    
     private readonly cateRepo: Repository<Category>,
   ) {}
 
