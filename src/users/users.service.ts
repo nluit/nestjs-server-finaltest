@@ -40,6 +40,12 @@ export class UsersService {
     );
     return await this.users.filter(val=> val.username === username )[0];
   }
+
+  async findUser(id: number): Promise<Users | undefined> {
+    return await this.userRepo.findOne({where : {id : id }});
+    
+  }
+
 }
 
 
