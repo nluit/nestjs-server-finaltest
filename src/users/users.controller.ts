@@ -12,7 +12,7 @@ export class UsersController {
         return this.userservice.createUser(user);
 
     }
-    @Get()
+    @Get(':id')
     getUsers(@Param() id :number ){
         return this.userservice.findUser(id);
     }

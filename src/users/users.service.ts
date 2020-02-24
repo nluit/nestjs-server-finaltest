@@ -41,8 +41,9 @@ export class UsersService {
     return await this.users.filter(val=> val.username === username )[0];
   }
 
-  async findUser(id: number): Promise<Users | undefined> {
-    return await this.userRepo.findOne({where : {id : id }});
+  async findUser(id: number): Promise<User> {
+    // console.log(this.userRepo.find().then(val=> console.log(val)));
+    return await this.userRepo.findOne(id)
     
   }
 
