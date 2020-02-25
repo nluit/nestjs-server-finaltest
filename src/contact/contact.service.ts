@@ -7,6 +7,9 @@ export class ContactService {
       
         var smtpTransport = nodemailer.createTransport({
             service: "Gmail",
+            host: 'smtp.gmail.com',
+            port: 465,
+            secure: true, 
             auth: {
                 user: "projectqlhs123@gmail.com",
                 pass: "qlhs123456"
