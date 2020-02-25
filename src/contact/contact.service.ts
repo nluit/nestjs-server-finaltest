@@ -1,21 +1,29 @@
 import { Injectable } from '@nestjs/common';
-import * as SendMail from '@sendgrid/mail';
+import * as nodemailer from 'nodemailer';
 @Injectable()
 export class ContactService {
 
     SendMessage(user){
-        console.log(1)
-        SendMail.setApiKey("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");
-            const msg = {
+      
+        var smtpTransport = nodemailer.createTransport({
+            service: "Gmail",
+            auth: {
+                user: "projectqlhs123@gmail.com",
+                pass: "qlhs123456"
+            }
+        });
+        var mailOptions = {
             to: user.email,
-            from: 'nluit99@gmail.com',
+            from: `projectqlhs123@gmail.com`,
             subject: 'Đăng kí email',
-            text: 'đăng kí email thành công',
-            html: `<strong> ${ user.message }</strong>`,
-            };
-            SendMail.send(msg);
-            console.log(2)
-            // return {code :201 , "messagge":"success !"}
+            text: ` ${user.fullname } Đăng kí Email thành công !!!`
+        };
+        smtpTransport.sendMail(mailOptions, function(err) {
+            if (err) console.log(err);
+            else {
+                console.log("success !")
+            }
+        });
     }
     
 }

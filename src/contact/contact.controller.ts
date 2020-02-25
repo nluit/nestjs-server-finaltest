@@ -9,10 +9,10 @@ export class ContactController {
     }  
     @Post()
     SendMail(@Body() user: User){
-        // console.log(user);
+        console.log(user);
         this.cateService.SendMessage(user);
         // console.log()
-        return ;
+        return {code :201}
         
     }
 }
